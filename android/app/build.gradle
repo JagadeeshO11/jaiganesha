@@ -71,7 +71,7 @@ def jscFlavor = 'org.webkit:android-jsc:+'
 android {
     ndkVersion rootProject.ext.ndkVersion
 
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion\n    buildToolsVersion rootProject.ext.buildToolsVersion
 
     namespace "com.torchcamreal"
     defaultConfig {
@@ -89,7 +89,12 @@ android {
             keyPassword 'android'
         }
     }
-    buildTypes {
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+\n    buildTypes {
         debug {
             signingConfig signingConfigs.debug
         }
