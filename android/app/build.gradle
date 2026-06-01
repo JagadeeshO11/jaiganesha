@@ -76,6 +76,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     namespace "com.torchcamreal"
+    buildFeatures {
+        buildConfig true
+    }
     defaultConfig {
         applicationId "com.torchcamreal"
         minSdkVersion rootProject.ext.minSdkVersion
