@@ -5,7 +5,7 @@ buildscript {
         compileSdkVersion = 34
         targetSdkVersion = 34
         ndkVersion = "23.1.7779620"
-        kotlinVersion = "1.8.0"
+        kotlinVersion = "1.8.22"
     }
     repositories {
         google()
@@ -19,12 +19,17 @@ buildscript {
 }
 
 
+
 allprojects {
     configurations.all {
         resolutionStrategy {
             force "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
             force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+            force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+            force "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
         }
+    }
+
     }
 
     repositories {
